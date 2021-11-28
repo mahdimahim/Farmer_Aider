@@ -1,0 +1,6 @@
+git remote add origin https://github.com/mahdimahim/Farmer_Aider.git
+node_modules/
+build
+npm-debug.log
+.env
+.DS_Store

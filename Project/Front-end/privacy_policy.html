@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Privacy Policy</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css" type="text/css">
+
+  </head>
+
+  <body>
+    <div class="container1">
+
+
+      <div class="upper-navbar">
+        <div class="logo-container">
+            <img class="img-fluid" id="logo-img" src="images/logo.png" width="200px" height="180px">
+
+        </div>
+
+        <!--Befor Login-->
+        <div class="sign-in-up">
+          <div class="shadow-lg p-3 mb-5 bg-white rounded" id="inner-sign-in-up">
+
+
+            <button type="button" id="sign-in" class="btn btn-outline-success" data-toggle="modal" data-target="#signInModal" style="margin-top:-11px;margin-left:23%;">Sign In</button>
+            <button type="button" id="sign-up" class="btn btn-outline-success" data-toggle="modal" data-target="#signUpModal" style="margin-top:-11px;">Sign Up</button>
+            <a id="sign-in-link" style="margin-top:-11px;color: green" href="#signInModal" data-toggle="modal">Sign In</a>
+            <a id="sign-up-link" style="margin-top:-11px;color: green" href="#signUpModal" data-toggle="modal">Sign Up</a>
+
+
+            <!--Sign in Modal-->
+            <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sign in here to continue</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form method="post" id="sign-in-form">
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Email Address:</label>
+                        <input type="text" class="form-control" name="email_address" id="email-address">
+                      </div>
+                      <div class="form-group">
+                        <label for="message-text" class="col-form-label">Password:</label>
+                        <input type="password" class="form-control" name="password" id="password">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-success" onclick="onLoginButtonClick(event)">Sign In</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+            <!--Sign up Modal-->
+            <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sign up here</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+
+
+                    <form method="post" id="sign-up-form">
+
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">User Name</label>
+                        <input type="text" class="form-control" name="user_name" id="user-name" placeholder="user name">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleFormControlInput2">Email address</label>
+                        <input type="email" class="form-control" name="email_address" id="email-address" placeholder="name@gmail.com">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleFormControlInput3">Password</label>
+                        <input type="password" class="form-control" name="password" id="password" placeholder="password">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect4">Type of account</label>
+                        <select class="form-control" name="type_of_account" id="select-type-of-account">
+                          <option>User</option>
+                          <option>Specialist</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea5">Current address</label>
+                        <textarea class="form-control" name="current_address" id="current-address" rows="2"></textarea>
+                      </div>
+                    </form>
+
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-success" onclick="onRegistrationButtonClick(event)">Sign Up</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+          </div>
+
+          <!--Sign out-->
+
+          <div class="shadow-lg p-3 mb-5 bg-white rounded" id="sign-out">
+
+
+            <button type="button" id="sign-out-view-acc-btn" onclick="onAccountClick()" class="btn btn-outline-success" style="margin-top:-11px;margin-left: 22%;float:left;margin-right:3px;">Account</button>
+            <button type="button" id="sign-out-btn" class="btn btn-outline-success" onclick="onSignOutClick()" style="margin-top:-11px;float:left;">Sign Out</button>
+
+            <div class="dropdown" id="sign-out-dropdown-button" style="float:left;margin-top:-11px">
+              <button class="btn btn-outline-success dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" onclick="onAccountClick()">View Account</a>
+                <a class="dropdown-item" onclick="onSignOutClick()" href="#">Sign Out</a>
+
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+      <!--Navbar-->
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #109c08;">
+        <a class="navbar-brand" style="color:white;" onclick="" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" style="color:white;"  onclick="onAiderButtonClick(event)" href="#">Aider<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color:white;" onclick="onQuestionBankButtonClick()" href="#">Question Bank</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color:white;" onclick="onLoanButtonClick()" href="#">Loan</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search Questions" aria-label="Search">
+            <button class="btn btn-secondary" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+      <!-- content  -->
+      <div class="shadow-lg p-3 mb-5 bg-white rounded" id="privacy-policy">
+          <h2 style="color:green;text-align:center">Privacy Policy</h2>
+          <br>
+          <p>Thank you for visiting the our website and reviewing our privacy statement. Our privacy policy is clear: We do not collect any personal identifiable information, (PII), without your explicit consent.
+
+          Here is how we handle your information when you visit our website:</p>
+         <br>
+         <h3>Information Collected and Stored Automatically</h3>
+         <p>The information we store does not identify you personally. We automatically collect and store only the following information about your visit:
+
+          The Internet domain and IP address from which you access our website. For example, if you access our website from school, we see "schoolname.edu" and the school's IP address;
+          The type of browser and operating system used to access our site;
+          The date and time you access our site;
+          The pages you visit; and
+          If you linked to the A website from another website, the address of that website.</p>
+
+          <br>
+          <h2>Children's Online Privacy Protection Act (COPPA)</h2>
+          <p>COPPA applies to the online collection of personal information from children under age 13. It complies with COPPA and does not knowingly collect personal information about children.</p>
+
+          <br>
+          <h2>You Send Us Personal Information</h2>
+          <p>If you choose to provide us with personal information, as in an e-mail to the Secretary or other  staff, or by filling out a form and submitting it to us through our website, we use that information to respond to your message. This also helps us to locate the information you have requested. We treat e-mails the same way that we handle paper-based correspondence sent to. We are required to maintain many documents under the Federal Record Act for historical purposes, but we do not collect personal information for any purpose other than to respond to you.</p>
+          <br>
+
+          <h2>Comment Policies</h2>
+          <p>The purpose of the this website is to share news and information regarding the activities, policies, and programs of website and its employees. We encourage discussion and comments on posts. </p>
+      </div>
+
+      <!--footer-->
+      <div id="div-footer-container">
+          <div id="div-footer1">
+              <img class="img-fluid" id="logo-img" src="images/logo.png" width="200px" height="180px">
+              <b id="footer-b1">Department of Agricultural</b>
+              <a href="privacy_policy.html" id="footer-a1">Privacy Policy</a>
+              <a href="#"style="color:green; margin-left:1%;">Home</a>
+          </div>
+
+          <div id="div-footer2" align="center">
+              © 2021 Copyright: farmer-aider.com
+          </div>
+
+
+      </div>
+
+
+    </div>
+
+
+
+    <script type="text/javascript">
+        if(sessionStorage.getItem('token')!=null){
+            document.getElementById('inner-sign-in-up').style.display = 'none';
+            document.getElementById('sign-out').style.display = 'block';
+
+
+
+        }else {
+            document.getElementById('inner-sign-in-up').style.display = 'block';
+            document.getElementById('sign-out').style.display = 'none';
+        }
+        function onSignOutClick(){
+            sessionStorage.clear();
+            window.location.replace("./index.html");
+        }
+
+        function onAccountClick(){
+            if(sessionStorage.getItem('typeOfAccount')=='Specialist'){
+                alert('As a Specialist you are not allowed to access this page');
+            }
+            if(sessionStorage.getItem('typeOfAccount')=='Admin'){
+                alert('As an Admin you are not allowed to access this page');
+            }
+            if(sessionStorage.getItem('typeOfAccount')=='User'){
+                window.location.href = './account.html';
+            }
+        }
+
+    </script>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="js/register.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/aider.js"></script>
+    <script src="js/question_bank.js"></script>
+    <script src="js/loan.js"></script>
+  </body>
+</html>

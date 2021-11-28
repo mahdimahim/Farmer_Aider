@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Farm Loan</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css" type="text/css">
+  </head>
+
+
+  <body>
+
+      <div class="container1">
+
+
+
+        <div class="upper-navbar">
+            <div class="logo-container">
+                <img class="img-fluid" src="images/logo.png" width="200" height="180">
+
+            </div>
+
+
+            <div class="sign-in-up">
+              <!--Sign out-->
+              <div class="shadow-lg p-3 mb-5 bg-white rounded" id="sign-out">
+
+
+                  <button type="button" id="sign-out-view-acc-btn" class="btn btn-outline-success" onclick="onAccountClick()" style="margin-top:-11px;margin-left: 22%;float:left;margin-right:3px;">Account</button>
+                  <button type="button" id="sign-out-btn" class="btn btn-outline-success" onclick="onSignOutClick()" style="margin-top:-11px;float:left;">Sign Out</button>
+
+                  <div class="dropdown" id="sign-out-dropdown-button" style="float:left;margin-top:-11px">
+                      <button class="btn btn-outline-success dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" onclick="onAccountClick()">View Account</a>
+                        <a class="dropdown-item" onclick="onSignOutClick()" href="#">Sign Out</a>
+
+                      </div>
+                  </div>
+              </div>
+
+            </div>
+
+
+
+        </div>
+
+
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #109c08;">
+          <a class="navbar-brand" style="color:white;" onclick="" href="index.html">Home</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" style="color:white;"  onclick="onAiderButtonClick(event)" href="#">Aider<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color:white;" onclick="onQuestionBankButtonClick()()" href="#">Question Bank</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color:white;" onclick="onLoanButtonClick()" href="#">Loan</a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search Questions" aria-label="Search">
+              <button class="btn btn-secondary" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+
+        <!--aider content-->
+        <img class="img-fluid" style="width:1400px;height:450px" src="./images/loan.jpg" alt="">
+
+        <div id="plant-aider">
+            <br>
+            <h2 align="center">Farm Loan Discovery Tool</h2>
+            <br>
+            <p style="font-size:20px;">New Farm Loan Discovery Tool Connects You With Loan Options Tailored to Your Needs.</p>
+            <br>
+            <p style="font-size:20px;">Fill the form of Farmer Aider farm loans that might be right for you. Farmer Aider also offers other funding opportunities to help farmers, ranchers, and forest landowners finance their business.</p>
+            <!--content-->
+            <br>
+            <div  id="loan-content">
+              <form class="shadow-lg p-3 mb-5 bg-white rounded" method="post" id="loan-insert-data">
+
+                <div class="form-group">
+                  <label for="exampleFormControlInput1"><b>Enter your postal code, so we can locate your nearest Service Center?</b></label>
+                  <input type="text" class="form-control" name="postal_code" placeholder='Your postal code'>
+                </div>
+                <br>
+
+                <div class="form-group">
+                  <label for="exampleFormControlSelect4"><b>About how much money are you looking to borrow?</b></label>
+                  <select class="form-control" name="loan_amount">
+                    <option>$10,000 or less</option>
+                    <option>$10,001 - $50,000</option>
+                    <option>$50,001 - $400,000</option>
+                    <option>Over $400,000</option>
+                  </select>
+                </div>
+
+                <!--<div class="modal-footer">-->
+
+                <button type="submit" class="btn btn-outline-success" onclick="onLoanInsertDataButtonClick()">Submit</button>
+                <!--</div>-->
+              </form>
+
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!--footer-->
+        <div id="div-footer-container">
+            <br>
+            <div id="div-footer1">
+                <img class="img-fluid" id="logo-img" src="images/logo.png" width="200px" height="180px">
+                <b id="footer-b1">Department of Agricultural</b>
+                <a href="privacy_policy.html" id="footer-a1">Privacy Policy</a>
+                <a href="#"style="color:green; margin-left:1%;">Home</a>
+            </div>
+
+            <div id="div-footer2" align="center">
+                © 2021 Copyright: farmer-aider.com
+            </div>
+
+
+        </div>
+
+
+
+      </div>
+
+      <script type="text/javascript">
+
+          function onSignOutClick(){
+              sessionStorage.clear();
+              window.location.replace("./index.html");
+          }
+          function onAccountClick(){
+              if(sessionStorage.getItem('typeOfAccount')=='Specialist'){
+                  alert('As a Specialist you are not allowed to access this page');
+              }
+              if(sessionStorage.getItem('typeOfAccount')=='Admin'){
+                  alert('As an Admin you are not allowed to access this page');
+              }
+              if(sessionStorage.getItem('typeOfAccount')=='User'){
+                  window.location.href = './account.html';
+              }
+          }
+
+      </script>
+
+
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+      <script src="js/aider.js"></script>
+      <script src="js/question_bank.js"></script>
+      <script src="js/loan_insert_data.js"></script>
+      <script src="js/loan.js"></script>
+
+  </body>
+</html>
