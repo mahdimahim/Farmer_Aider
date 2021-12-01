@@ -9,8 +9,6 @@ let db = require('../Database/database');
 let registerUser = (user_name, email_address, password,
   type_of_account, current_address, res) => {
 //global.userId = 0;
-
-
     bcrypt.hash(password, saltRounds, function(err, hash) {
 
         let sql = "INSERT INTO tbl_all_users(??,??,??,??,??) values(?,?,?,?,?)";

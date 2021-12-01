@@ -3,6 +3,7 @@ function tryAider(token){
 
     //alert(token);
     let tokenObj = {'token':token};
+	
 
 
     var config = {

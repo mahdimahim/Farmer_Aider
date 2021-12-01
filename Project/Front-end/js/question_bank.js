@@ -1,5 +1,6 @@
 function tryQuestionBank(token){
     var url = 'http://localhost:3000/question_bank_auth';
+	
 
     //alert(token);
     let tokenObj = {'token':token};

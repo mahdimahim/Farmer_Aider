@@ -1,5 +1,6 @@
 function insertLoanData(data){
   var url = 'http://localhost:3000/loan_insert_data';
+  
   //alert(data);
   var config = {
     method: 'post',

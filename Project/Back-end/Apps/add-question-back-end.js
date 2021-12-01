@@ -31,7 +31,7 @@ let addQuestion = (userId, question, question_topic, res) => {
 
 const initAddQuestionApp = (app) => {
   app.post('/add_question', (req, res)=>{
-      //console.log(req.body);
+      //  console.log(req.body);
 
       let {userId, question, question_topic} = req.body;
 

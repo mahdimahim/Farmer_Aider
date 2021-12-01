@@ -8,7 +8,7 @@ let userToken;
 let loginFunc = (req, res) => {
     let{email, password} = req.body;
 
-    //console.log(email+" "+password);
+    //   console.log(email+" "+password);
 
     if(email && password){
 

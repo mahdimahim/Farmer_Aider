@@ -2,6 +2,7 @@ function tryInsertAnswer(submitBtnId, answer){
     var url = 'http://localhost:3000/insert_answer';
 
 
+
     questionId = submitBtnId.split(' ')[0];
     specialistName = submitBtnId.slice(questionId.length+1);
     let specialistInfo = {

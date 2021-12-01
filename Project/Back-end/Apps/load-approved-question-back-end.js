@@ -5,7 +5,7 @@ let db = require('../Database/database');
 let loadApprovedQuestionFunc = (req, res) => {
     let{status} = req.body;
 
-    //console.log(email+" "+password);
+    //  console.log(email+" "+password);
 
     if(status){
         var sql = `SELECT ??, ??, ??, ??, ??, ??

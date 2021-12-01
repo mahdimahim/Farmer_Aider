@@ -5,7 +5,7 @@ let db = require('../Database/database');
 let approveUnapprovedQuestionFunc = (req, res) => {
     let{btnId} = req.body;
     let questionId = btnId;
-    //console.log(email+" "+password);
+    //  console.log(email+" "+password);
 
     if(questionId){
         var sql = `UPDATE tbl_question_bank

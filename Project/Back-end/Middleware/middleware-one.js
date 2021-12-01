@@ -15,3 +15,5 @@ const initMiddlewares = (app) => {
 };
 
 module.exports = initMiddlewares;
+
+

@@ -1,6 +1,7 @@
 function tryLoan(token){
     var url = 'http://localhost:3000/loan_auth';
 
+
     //alert(token);
     let tokenObj = {'token':token};
 

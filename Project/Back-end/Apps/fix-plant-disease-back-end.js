@@ -12,7 +12,7 @@ let loadFixPlantDiseaseFunc = (req, res) => {
         var data = ['Problem_Id', problemId];
 
         var query = mysql.format(sql, data);
-        //console.log(query);
+        //  console.log(query);
 
 
         db.query(query, (error, results, fields) => {

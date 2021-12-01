@@ -10,6 +10,7 @@ function register(data){
     body: JSON.stringify(data)
   };
 
+
   var takeResponse = function(response){
     return response.json();
   };

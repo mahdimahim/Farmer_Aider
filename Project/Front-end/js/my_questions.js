@@ -3,6 +3,7 @@ let render = (data, answerData) => {
     let div = document.getElementById('lower-navbar-content-d1');
 
     data.forEach((item) => {
+		
 
 
         let iDiv = document.createElement('div');

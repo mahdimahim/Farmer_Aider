@@ -17,7 +17,7 @@ let questionBankFunc = (req, res) =>{
 
 
 
-// verify token
+// verify token   
 let verifyToken = (req, res, next) =>{ // middleware function
   // get auth header value
   const bearerHeader = req.headers['authorization'];

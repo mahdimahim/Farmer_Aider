@@ -3,6 +3,7 @@ function tryApproveQuestion(status){
     var url = 'http://localhost:3000/approve_question';
 
     let statusObj = {'status':status};
+	
 
 
     var config = {

@@ -5,7 +5,7 @@ let db = require('../Database/database');
 let approveQuestionFunc = (req, res) => {
     let{status} = req.body;
 
-    //console.log(status);
+    //  console.log(status);
 
     if(status){
         var sql = `SELECT ??, ??, ??, ??, ??

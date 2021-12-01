@@ -3,7 +3,7 @@ let mysql = require('mysql');
 let db = require('../Database/database');
 
 let loanInsertData = (userId, userName, postalCode, loanAmount, res) => {
-//global.userId = 0;
+//  global.userId = 0;
 
 
 

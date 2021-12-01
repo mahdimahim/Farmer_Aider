@@ -6,6 +6,7 @@ let loadMyQuestionFunc = (req, res) => {
     let{status, username} = req.body;
 
     //console.log(email+" "+password);
+	
     if(status && username){
         //console.log(status);
         var sql = `SELECT u.User_Id, q.Question_Id, q.Question_Date, q.Question, q.Question_Topic

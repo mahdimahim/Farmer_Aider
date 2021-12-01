@@ -2,6 +2,7 @@ let mysql = require('mysql');
 let db = require('../Database/database');
 
 
+
 let loadVisitAccountFunc = (req, res) => {
     let{userId} = req.body;
 

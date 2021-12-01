@@ -1,6 +1,7 @@
 
 function tryApproveUnapprovedQuestion(btnId){
     var url = 'http://localhost:3000/approve_unapproved_question';
+	
 
     btnId = btnId.replace("btn",'');
 

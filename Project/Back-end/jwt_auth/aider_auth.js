@@ -13,7 +13,7 @@ let aiderFunc = (req, res) =>{
         message:'User logged in',
         authData
       });
-      //console.log(authData.user);
+      //  console.log(authData.user);
     }
   });
 }

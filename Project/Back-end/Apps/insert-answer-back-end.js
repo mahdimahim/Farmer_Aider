@@ -29,7 +29,7 @@ let insertAnswer = (questionId, specialistName, answer, res) => {
 
 const initInsertAnswerApp = (app) => {
   app.post('/insert_answer', (req, res)=>{
-      //console.log(req.body);
+      //   console.log(req.body);
 
       let {questionId, specialistName, answer} = req.body;
 
